@@ -1,0 +1,142 @@
+@import '_common';
+
+* {
+  margin: 0px;
+}
+
+body {
+  background-color: $secondary;
+  padding: 20px 40px;
+}
+
+@mixin flex-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin primary-button {
+  background-color: $primary;
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
+  border: 1px solid $ternary;
+  border-radius: 100px;
+
+  &:hover {
+    background-color: $secondary;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  button {
+    @include primary-button();
+  }
+}
+
+.add-modal {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  @include flex-box();
+
+  form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    padding: 30px 40px;
+    width: 300px;
+    border-radius: 10px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 5px;
+
+      input {
+        height: 35px;
+        border-radius: 10px;
+        border: 1px solid $primary;
+        outline: none;
+        padding: 0px 10px;
+      }
+    }
+    button {
+      background-color: $primary;
+      height: 40px;
+      width: 100%;
+      border-radius: 10px;
+      border:1px solid $primary
+    }
+  }
+}
+
+
+.title{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap:calc(100% - 90px);
+  align-items: center;
+
+  div{
+    width: fit-content;
+
+    svg{
+      background: $primary;
+      border-radius: 100px;
+      padding: 10px;
+    }
+  }
+}
+
+.container{
+  margin-top: 30px;
+  display: flex; 
+  flex-wrap: wrap;
+  gap:20px;
+
+}
+
+.card__component {
+  width: fit-content;
+  border-radius: 10px;
+  min-width: 300px;
+  padding: 0px 20px 20px 20px;
+  background-color: white;
+  border: 1px solid white;
+
+  &:hover {
+    background:$primary;
+  }
+  &:active {
+    border: 1px solid $ternary;
+  }
+}
+
+.card__id__component {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+
+  button {
+    border: 1px solid $secondary;
+    background-color: $primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 100px 100px 100px 100px;
+  }
+}
