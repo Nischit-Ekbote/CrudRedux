@@ -91,13 +91,12 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  width: 100%;
 }
 
 .card__component {
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 300px;
   border-radius: 10px;
-  min-width: 300px;
   padding: 0px 20px 20px 20px;
   background-color: white;
   border: 1px solid white;
@@ -107,6 +106,16 @@ body {
 }
 .card__component:active {
   border: 1px solid #827dc1;
+}
+@media (max-width: 670px) {
+  .card__component {
+    width: 250px;
+  }
+}
+@media (max-width: 400px) {
+  .card__component {
+    width: 200px;
+  }
 }
 
 .card__id__component {

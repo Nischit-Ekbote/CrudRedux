@@ -2,27 +2,43 @@
   position: fixed;
   height: 100%;
   width: 100%;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 .modal__data__container {
   background-color: white;
-  min-width: 300px;
+  width: 100%;
+  max-width: 600px;
   min-height: 200px;
-  padding: 40px 40px;
+  padding: 40px;
   border-radius: 20px;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .modal__data__container {
+    padding: 20px;
+    min-height: 150px;
+  }
+}
+@media (max-width: 480px) {
+  .modal__data__container {
+    padding: 15px;
+    border-radius: 15px;
+  }
 }
 
 .modal__nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .modal__x {
@@ -31,59 +47,104 @@
   border-radius: 100px;
   padding: 10px;
 }
+@media (max-width: 480px) {
+  .modal__x {
+    padding: 8px;
+  }
+}
 
 .modal__data {
   display: flex;
-  gap: 10px;
-  padding-top: 20px;
+  align-items: center;
   flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .modal__data {
+    padding: 20px;
+    gap: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .modal__data {
+    padding: 15px;
+    gap: 10px;
+  }
 }
 .modal__data div {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  gap: 5px;
 }
 .modal__data div input {
   height: 35px;
   border-radius: 10px;
   border: 1px solid #d5d2fd;
   outline: none;
-  padding: 0px 10px;
+  padding: 0 10px;
+  width: 100%;
+}
+@media (max-width: 480px) {
+  .modal__data div input {
+    height: 32px;
+  }
 }
 
 .link-text {
   color: blue;
   text-decoration: underline;
   cursor: pointer;
+  word-break: break-word;
 }
 
 .modal__button {
+  width: 100%;
   padding-top: 20px;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 10px;
+  flex-wrap: wrap;
+}
+@media (max-width: 480px) {
+  .modal__button {
+    justify-content: center;
+    padding-top: 15px;
+  }
 }
 
-.edit__button {
+.edit__button, .delete__button {
   cursor: pointer;
   border: 1px solid #d5d2fd;
   border-radius: 20px;
   padding: 10px 20px;
-  background-color: #d5d2fd;
+  min-width: 100px;
+}
+@media (max-width: 480px) {
+  .edit__button, .delete__button {
+    padding: 8px 16px;
+    width: 100%;
+    text-align: center;
+  }
 }
 
+.edit__button {
+  background-color: #d5d2fd;
+}
 .edit__button:hover {
   border-color: #d5d2fd;
   background-color: #fcf8f5;
 }
 
 .delete__button {
-  cursor: pointer;
-  border: 1px solid #d5d2fd;
-  border-radius: 20px;
-  padding: 10px 20px;
   background-color: #fcf8f5;
 }
-
 .delete__button:hover {
   background-color: #d5d2fd;
 }/*# sourceMappingURL=modal.css.map */

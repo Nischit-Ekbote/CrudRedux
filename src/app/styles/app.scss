@@ -105,13 +105,14 @@ body {
   display: flex; 
   flex-wrap: wrap;
   gap:20px;
+  width: 100%;
+
 
 }
 
 .card__component {
-  width: fit-content;
+  width: 300px;
   border-radius: 10px;
-  min-width: 300px;
   padding: 0px 20px 20px 20px;
   background-color: white;
   border: 1px solid white;
@@ -121,6 +122,13 @@ body {
   }
   &:active {
     border: 1px solid $ternary;
+  }
+  @media (max-width: 670px) {
+    width: 250px;
+  }
+  
+  @media (max-width: 400px) {
+    width: 200px;
   }
 }
 
@@ -140,3 +148,5 @@ body {
     border-radius: 100px 100px 100px 100px;
   }
 }
+
+

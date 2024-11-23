@@ -1,93 +1,147 @@
 @import '_common';
 
-.modal{
+.modal {
     position: fixed;
-    height:100%;
-    width:100%;
-    top:0px;
-    left: 0px;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
     backdrop-filter: blur(10px);
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    
+    padding: 20px;  // Add padding for smaller screens
 }
 
-.modal__data__container{
+.modal__data__container {
     background-color: white;
-    min-width: 300px;
+    width: 100%;  // Changed to width: 100%
+    max-width: 600px;  // Added max-width
     min-height: 200px;
-    padding:40px 40px;
+    padding: 40px;
     border-radius: 20px;
+    margin: auto;  // Center container
+
+    @media (max-width: 768px) {
+        padding: 20px;
+        min-height: 150px;
+    }
+
+    @media (max-width: 480px) {
+        padding: 15px;
+        border-radius: 15px;
+    }
 }
 
-.modal__nav{
+.modal__nav {
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;  // Added margin for spacing
 }
 
-.modal__x{
+.modal__x {
     cursor: pointer;
     background-color: $primary;
-    border-radius: 100px; 
+    border-radius: 100px;
     padding: 10px;
+
+    @media (max-width: 480px) {
+        padding: 8px;
+    }
 }
 
-.modal__data{
-    display:flex;
-    gap:10px;
-    padding-top:20px ;
+.modal__data {
+    display: flex;
+    align-items: center;
     flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    padding: 30px 40px;
+    width: 100%;  // Changed to 100%
+    max-width: 400px;  // Added max-width
+    border-radius: 10px;
+    margin: auto;  // Center the data container
 
-    div{
+    @media (max-width: 768px) {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    @media (max-width: 480px) {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    div {
         display: flex;
         flex-direction: column;
+        width: 100%;
+        gap: 5px;
 
-        input{
+        input {
             height: 35px;
             border-radius: 10px;
             border: 1px solid $primary;
             outline: none;
-            padding: 0px 10px;
+            padding: 0 10px;
+            width: 100%;  // Ensure inputs take full width
+
+            @media (max-width: 480px) {
+                height: 32px;
+            }
         }
     }
 }
 
-.link-text{
-    color:blue;
-    text-decoration: underline; 
+.link-text {
+    color: blue;
+    text-decoration: underline;
     cursor: pointer;
+    word-break: break-word; 
 }
 
-.modal__button{
+.modal__button {
+    width: 100%; 
     padding-top: 20px;
     display: flex;
-    justify-content: end;
-    gap:10px;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    @media (max-width: 480px) {
+        justify-content: center; 
+        padding-top: 15px;
+    }
 }
 
-.edit__button{
+.edit__button, .delete__button {
     cursor: pointer;
     border: 1px solid $primary;
     border-radius: 20px;
     padding: 10px 20px;
+    min-width: 100px; 
+
+    @media (max-width: 480px) {
+        padding: 8px 16px;
+        width: 100%;  
+        text-align: center;
+    }
+}
+
+.edit__button {
     background-color: $primary;
+
+    &:hover {
+        border-color: $primary;
+        background-color: $secondary;
+    }
 }
 
-.edit__button:hover{
-    border-color: $primary;
+.delete__button {
     background-color: $secondary;
-}
 
-.delete__button{
-    cursor: pointer;
-    border: 1px solid $primary;
-    border-radius: 20px;
-    padding: 10px 20px;
-    background-color: $secondary;
-}
-
-.delete__button:hover{
-    background-color: $primary;
+    &:hover {
+        background-color: $primary;
+    }
 }
